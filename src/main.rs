@@ -44,22 +44,15 @@ fn main() {
     let object_two: Object = serde_yaml::from_reader(secret_reader).unwrap();
     inspect_object(&object_two);
     println!("{:?}", object_two);
-
-    if object_two.kind == "Secret" {
-        println!("I am a secret");
-    }
 }
 
 fn inspect_object(obj: &Object) -> () {
     let _ = match obj {
-        /*
         Object::Pod{ metadata, .. } => {
             println!("I am a pod named {}!", metadata.name);
         }
         Object::Secret{metadata, ..} => {
             println!("I am a secret named {}", metadata.name);
         }
-        */
-        *{api_version, kind, ...} => println!("Version: {}, Kind: {}", api_Version, kind)
     };
 }
