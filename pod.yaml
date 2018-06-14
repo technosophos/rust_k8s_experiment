@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: brigade-trello
+    pod-template-hash: "4191612275"
+    release: trello
+  name: trello-brigade-trello-85f5b566c9-mbzn5
+spec:
+  restartPolicy: Always
